@@ -1,0 +1,9 @@
+# Specify a base image
+FROM node:alpine
+#Install some depenedencies
+COPY ./package.json .
+COPY . .
+RUN npm install
+# Tell an image what to do when it starts a container
+CMD ["npm","run","webdriver-start"]
+CMD ["npm","run","suite"]

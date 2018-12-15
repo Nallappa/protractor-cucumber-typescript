@@ -1,0 +1,13 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+     - /node_modules
+  tests:
+    build: .
+    volumes:
+      - /node_modules
+    command: ["npm", "run", "test"]
